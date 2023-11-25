@@ -1,10 +1,11 @@
 import { Drawer, DrawerProps, RadioChangeEvent } from "antd";
 import { FC, HTMLAttributes, useState } from "react";
+import Navbar from "@components/Navbar";
 
 export type SearchLayoutProps = HTMLAttributes<HTMLDivElement> & {};
 
 const SearchLayout: FC<SearchLayoutProps> = ({ children }) => {
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState<boolean>(false);
   const [placement, setPlacement] = useState<DrawerProps["placement"]>("left");
 
   const showDrawer = () => {
@@ -20,6 +21,7 @@ const SearchLayout: FC<SearchLayoutProps> = ({ children }) => {
   };
   return (
     <div>
+      <Navbar />
       <Drawer
         title="Basic Drawer"
         placement={placement}
